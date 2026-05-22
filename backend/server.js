@@ -123,7 +123,7 @@ app.post(
               <p style="color:#555;line-height:1.7;">
                 In the meantime, feel free to check out my
                 <a href="https://github.com/rajeshathelli2005" style="color:#6366f1;">GitHub</a> or
-                <a href="https://www.linkedin.com/in/rajesh-athelli/" style="color:#6366f1;">LinkedIn</a>.
+                <a href="https://www.linkedin.com/in/rajesh-athelli-78a542321/" style="color:#6366f1;">LinkedIn</a>.
               </p>
               <p style="color:#555;">Best,<br/><strong>Rajesh Athelli</strong></p>
             </div>

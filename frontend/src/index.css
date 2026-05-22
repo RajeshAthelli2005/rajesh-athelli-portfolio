@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap');
+
+:root {
+  --primary:        #0ea5e9;
+  --primary-dark:   #0284c7;
+  --primary-light:  #38bdf8;
+  --secondary:      #8b5cf6;
+  --secondary-dark: #7c3aed;
+  --accent:         #f59e0b;
+  --bg-primary:     #f0f9ff;
+  --bg-secondary:   #e0f2fe;
+  --bg-card:        #ffffff;
+  --bg-card-hover:  #f0f9ff;
+  --text-primary:   #0c1a2e;
+  --text-secondary: #334155;
+  --text-muted:     #64748b;
+  --border:         #bae6fd;
+  --border-light:   #e0f2fe;
+  --success:        #059669;
+  --error:          #dc2626;
+  --gradient:       linear-gradient(135deg, #0ea5e9, #8b5cf6);
+  --gradient-text:  linear-gradient(135deg, #0ea5e9, #8b5cf6, #f59e0b);
+  --shadow-sm:      0 2px 8px rgba(14,165,233,0.10);
+  --shadow-md:      0 4px 20px rgba(14,165,233,0.13);
+  --shadow-lg:      0 8px 40px rgba(14,165,233,0.16);
+  --shadow-glow:    0 0 30px rgba(14,165,233,0.25);
+  --radius-sm:      8px;
+  --radius-md:      14px;
+  --radius-lg:      22px;
+  --transition:     all 0.3s cubic-bezier(0.4,0,0.2,1);
+  --font-main:      'Plus Jakarta Sans', sans-serif;
+  --font-code:      'Space Mono', monospace;
+}
+
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body {
+  font-family: var(--font-main);
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  line-height: 1.6;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+::-webkit-scrollbar { width:5px; }
+::-webkit-scrollbar-track { background: var(--bg-secondary); }
+::-webkit-scrollbar-thumb { background: var(--gradient); border-radius:3px; }
+::selection { background:rgba(14,165,233,0.15); color:var(--text-primary); }
+h1,h2,h3,h4,h5,h6 { font-weight:700; line-height:1.2; color:var(--text-primary); }
+p { color:var(--text-secondary); line-height:1.8; }
+a { text-decoration:none; color:inherit; transition:var(--transition); }
+img { max-width:100%; display:block; }
+ul { list-style:none; }
+button { cursor:pointer; border:none; outline:none; font-family:var(--font-main); }
+input, textarea { font-family:var(--font-main); outline:none; }
+
+.container { max-width:1200px; margin:0 auto; padding:0 2rem; }
+.section { padding:100px 0; }
+
+.section-header { text-align:center; margin-bottom:60px; }
+.section-tag {
+  display:inline-block; font-family:var(--font-code); font-size:0.78rem;
+  color:var(--primary-dark); background:rgba(14,165,233,0.1);
+  border:1px solid rgba(14,165,233,0.3); padding:6px 18px; border-radius:50px;
+  margin-bottom:16px; letter-spacing:0.1em; text-transform:uppercase;
+}
+.section-title {
+  font-size:clamp(2rem,4vw,2.8rem); font-weight:800; margin-bottom:14px;
+  background:var(--gradient-text); -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent; background-clip:text;
+}
+.section-subtitle { font-size:1.05rem; color:var(--text-secondary); max-width:580px; margin:0 auto; }
+
+.btn {
+  display:inline-flex; align-items:center; gap:8px;
+  padding:13px 28px; border-radius:var(--radius-md);
+  font-size:0.95rem; font-weight:700; transition:var(--transition);
+}
+.btn-primary { background:var(--gradient); color:white; box-shadow:0 4px 18px rgba(14,165,233,0.35); }
+.btn-primary:hover { transform:translateY(-3px); box-shadow:0 8px 28px rgba(14,165,233,0.5); }
+.btn-outline { background:transparent; color:var(--primary-dark); border:2px solid var(--primary); }
+.btn-outline:hover { background:rgba(14,165,233,0.08); transform:translateY(-3px); box-shadow:var(--shadow-glow); }
+
+.gradient-text {
+  background:var(--gradient-text); -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent; background-clip:text;
+}
+
+@keyframes fadeInUp  { from{opacity:0;transform:translateY(28px)} to{opacity:1;transform:translateY(0)} }
+@keyframes fadeIn    { from{opacity:0} to{opacity:1} }
+@keyframes float     { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-16px)} }
+@keyframes pulse-glow{ 0%,100%{box-shadow:0 0 12px rgba(14,165,233,0.3)} 50%{box-shadow:0 0 28px rgba(14,165,233,0.65)} }
+@keyframes spin      { from{transform:rotate(0deg)} to{transform:rotate(360deg)} }
+@keyframes blink     { 0%,100%{opacity:1} 50%{opacity:0} }
+@keyframes fillBar   { from{width:0} to{width:var(--w)} }
+
+@media (max-width:768px) { .section{padding:70px 0;} .container{padding:0 1.25rem;} }
