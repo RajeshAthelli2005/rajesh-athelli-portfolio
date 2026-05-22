@@ -1,6 +1,8 @@
 import React from 'react';
 import './Resume.css';
 
+const profileImage = (process.env.PUBLIC_URL || '') + '/profile.jpg';
+
 const HIGHLIGHTS = [
   { icon:'💼', text:'Fullstack Developer Intern — Future Interns (2025)' },
   { icon:'🏆', text:'Python Full-Stack Certification — 10000 Coders (Mar–Sep 2025)' },
@@ -23,8 +25,12 @@ export default function Resume() {
         <div className="resume-card-wrap">
           <div className="resume-identity">
             <div className="resume-avatar">
-              <img src="/profile.jpg" alt="Rajesh Athelli" className="resume-avatar-img"
-                onError={e=>{e.target.style.display='none';e.target.nextSibling.style.display='flex';}}/>
+              <img src={profileImage} alt="Rajesh Athelli" className="resume-avatar-img"
+                onError={e=>{
+                  e.currentTarget.style.display='none';
+                  const fb = e.currentTarget.parentElement.querySelector('.resume-avatar-fallback');
+                  if(fb) fb.style.display='flex';
+                }}/>
               <span className="resume-avatar-fallback" style={{display:'none'}}>RA</span>
             </div>
             <h3 className="resume-name">Rajesh Athelli</h3>

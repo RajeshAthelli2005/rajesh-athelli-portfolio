@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import './Navbar.css';
 
+const profileImage = (process.env.PUBLIC_URL || '') + '/profile.jpg';
+
 const NAV_LINKS = [
   { label:'Home',       href:'home' },
   { label:'About',      href:'about' },
@@ -34,9 +36,19 @@ export default function Navbar() {
     <nav className={`navbar${scrolled?' scrolled':''}`} aria-label="Main navigation">
       <div className="container navbar-inner">
         <a href="#home" className="navbar-logo" onClick={e=>go(e,'home')}>
-          <span className="logo-bracket">&lt;</span>
-          <span className="logo-text">RA</span>
-          <span className="logo-bracket">/&gt;</span>
+          <div className="navbar-avatar">
+            <img
+              src={profileImage}
+              alt="Rajesh Athelli"
+              className="navbar-avatar-img"
+              onError={e => {
+                e.currentTarget.style.display = 'none';
+                e.currentTarget.nextSibling.style.display = 'flex';
+              }}
+            />
+            <span className="navbar-avatar-fallback">RA</span>
+          </div>
+          <span className="navbar-name">Rajesh <span className="logo-text">Athelli</span></span>
         </a>
         <ul className="navbar-links">
           {NAV_LINKS.map(l=>(

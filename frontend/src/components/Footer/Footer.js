@@ -1,6 +1,7 @@
 import React from 'react';
 import './Footer.css';
 
+const profileImage = (process.env.PUBLIC_URL || '') + '/profile.jpg';
 const NAV = ['home','about','skills','projects','experience','resume','contact'];
 
 export default function Footer() {
@@ -9,9 +10,19 @@ export default function Footer() {
     <footer className="footer" role="contentinfo">
       <div className="container footer-inner">
         <div className="footer-logo">
-          <span className="logo-bracket">&lt;</span>
-          <span className="logo-text">RA</span>
-          <span className="logo-bracket">/&gt;</span>
+          <div className="footer-avatar">
+            {/* <img
+              // src="/profile.jpg"
+              alt="Rajesh Athelli"
+              className="footer-avatar-img"
+              onError={e => {
+                e.currentTarget.style.display = 'none';
+                e.currentTarget.nextSibling.style.display = 'flex';
+              }}
+            /> */}
+            {/* <span className="footer-avatar-fallback">RA</span> */}
+          </div>
+          <span className="footer-logo-name">Rajesh <span className="logo-text">Athelli</span></span>
         </div>
         <p className="footer-tagline">Building the web, one component at a time.</p>
         <nav className="footer-nav-row" aria-label="Footer navigation">

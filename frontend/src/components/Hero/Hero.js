@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './Hero.css';
 
+const profileImage = (process.env.PUBLIC_URL || '') + '/profile.jpg';
 const ROLES = ['Fullstack Developer','React Developer','Node.js Developer','Python Programmer','Problem Solver'];
 
 export default function Hero() {
@@ -33,9 +34,17 @@ export default function Hero() {
         <div className="hero-visual">
           <div className="avatar-wrapper">
             <div className="avatar">
-              <img src="/profile.jpg" alt="Rajesh Athelli" className="avatar-photo"
-                onError={e=>{e.target.style.display='none';e.target.nextSibling.style.display='flex';}}/>
-              <span className="avatar-fallback" style={{display:'none'}}>RA</span>
+              <img
+                src={profileImage}
+                alt="Rajesh Athelli"
+                className="avatar-photo"
+                onError={e => {
+                  e.currentTarget.style.display = 'none';
+                  const fallback = e.currentTarget.parentElement.querySelector('.avatar-fallback');
+                  if (fallback) fallback.style.display = 'flex';
+                }}
+              />
+              <span className="avatar-fallback">RA</span>
             </div>
             <div className="ring ring-1"/><div className="ring ring-2"/>
           </div>

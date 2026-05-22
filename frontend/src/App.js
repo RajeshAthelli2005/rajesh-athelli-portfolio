@@ -10,6 +10,8 @@ import Contact from './components/Contact/Contact';
 import Footer from './components/Footer/Footer';
 import ScrollToTop from './components/ScrollToTop/ScrollToTop';
 
+const profileImage = (process.env.PUBLIC_URL || '') + '/profile.jpg';
+
 function Loader() {
   return (
     <div style={{
@@ -43,7 +45,7 @@ function Loader() {
           position:'relative',zIndex:2
         }}>
           <img
-            src="/profile.jpg"
+            src={profileImage}
             alt="Rajesh Athelli"
             style={{width:'100%',height:'100%',objectFit:'cover',objectPosition:'center top',borderRadius:'50%'}}
             onError={e => {
