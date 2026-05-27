@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/rajesh-athelli-portfolio/static/css/main.1cc3cba6.css",
-    "main.js": "/rajesh-athelli-portfolio/static/js/main.29f71298.js",
+    "main.js": "/rajesh-athelli-portfolio/static/js/main.6d8c3aa9.js",
     "index.html": "/rajesh-athelli-portfolio/index.html",
     "main.1cc3cba6.css.map": "/rajesh-athelli-portfolio/static/css/main.1cc3cba6.css.map",
-    "main.29f71298.js.map": "/rajesh-athelli-portfolio/static/js/main.29f71298.js.map"
+    "main.6d8c3aa9.js.map": "/rajesh-athelli-portfolio/static/js/main.6d8c3aa9.js.map"
   },
   "entrypoints": [
     "static/css/main.1cc3cba6.css",
-    "static/js/main.29f71298.js"
+    "static/js/main.6d8c3aa9.js"
   ]
 }
